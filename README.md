@@ -1,6 +1,10 @@
 # dotScrypt
 
-dotScrypt is a high-performance .NET wrapper for Colin Percival’s reference scrypt key derivation function, built for security, portability, and full parameter control. This library provides native, optimized builds for Windows, Linux, and macOS (including Apple Silicon) with zero external dependencies. It enables direct access to scrypt_kdf() via Scrypt.Hash() through an idiomatic .NET interface, making it ideal for password hashing and cryptographic key derivation in AOT-compatible applications. Additional ergonomic wrappers have been added to (1) encode the kdf parameters, salt, & password hash; and (2) verify those hashes against a supplied password.
+dotScrypt is a high-performance .NET wrapper for Colin Percival’s reference scrypt key derivation function, built for security, portability, and full parameter control. 
+
+This library provides native, optimized builds for Windows, Linux, and macOS (including Apple Silicon) with zero external dependencies. 
+
+dotScrypt enables direct access to scrypt_kdf() via Scrypt.Hash() through an idiomatic .NET interface, making it ideal for password hashing and cryptographic key derivation in AOT-compatible applications. Additional ergonomic wrappers have been added to: (1) encode the kdf parameters, salt, & password hash; and (2) verify those hashes against a supplied password.
 
 ---
 
