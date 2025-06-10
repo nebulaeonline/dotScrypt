@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+      <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+      <PackageId>nebulae.dotScrypt</PackageId>
+      <Version>0.3.0</Version>
+      <Authors>Robert C. Horvath III</Authors>
+      <Company>Nebulae Foundation LLC</Company>
+      <Description>High-performance Scrypt wrapper for .NET with native SIMD-optimized bindings</Description>
+      <PackageTags>scrypt password hashing crypto native aot</PackageTags>
+      <RepositoryUrl>https://github.com/nebulaeonline/dotScrypt</RepositoryUrl>
+      <RepositoryType>git</RepositoryType>
+      <PackageLicenseExpression>MIT</PackageLicenseExpression>
+      <PackageProjectUrl>https://github.com/nebulaeonline/dotScrypt</PackageProjectUrl>
+      <IncludeSymbols>false</IncludeSymbols>
+      <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+      <Copyright>Copyright © 2025 Nebulae Foundation LLC </Copyright>
+      <PackageReadmeFile>docs\README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\README.md" Pack="true" PackagePath="docs">
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </None>
+        <None Include="runtimes\**\native\*" Pack="true" PackagePath="runtimes\" CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="runtimes\linux-x64\native\libscrypt.so">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="runtimes\osx-arm64\native\libscrypt.dylib">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="runtimes\osx-x64\native\libscrypt.dylib">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="runtimes\win-x64\native\libscrypt.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+</Project>
